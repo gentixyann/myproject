@@ -13,7 +13,8 @@ class TaskController extends Controller
     	// Folder モデルの all クラスメソッドですべてのフォルダデータをデータベースから取得
     	 $folders = Folder::all();
 
-    	 return view('tasks/index'. [
+    	 // dd($folders);
+    	 return view('tasks/index', [
     	 	'folders' => $folders,
     	 ]);
     }
