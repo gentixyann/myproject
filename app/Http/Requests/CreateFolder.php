@@ -26,6 +26,14 @@ class CreateFolder extends FormRequest
         return [
         // HTML 側での input 要素の name 属性に対応。ここではtitle
           'title' => 'required',
+          'title' => 'required|max:20',
         ];
     }
+
+    public function attributes()
+    {
+    return [
+        'title' => 'フォルダ名',
+    ];
+     }
 }
