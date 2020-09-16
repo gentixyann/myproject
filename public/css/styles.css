@@ -44,3 +44,15 @@ a.my-navbar-item:hover {
 .form-control[readonly] {
   background-color: #fff;
 }
+
+.label-danger {
+  background-color: #db745a;
+}
+.label-info {
+  background-color: #40db5c;
+}
+
+
+
+
+
