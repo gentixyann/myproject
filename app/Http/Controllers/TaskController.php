@@ -46,7 +46,9 @@ class TaskController extends Controller
 
 	    $task = new Task();
 	    $task->title = $request->title;
-	    $task->due_date = $request->due_date;
+	    $task->due_date = $request->due_date = date('Y-m-d H:i:s');
+	    // dd($task->due_date);
+
 
 	    $current_folder->tasks()->save($task);
 
@@ -54,6 +56,18 @@ class TaskController extends Controller
 	        'id' => $current_folder->id,
 	    ]);
     }
+
+    /**
+	 * GET /folders/{id}/tasks/{task_id}/edit
+	 */
+	public function showEditForm(int $id, int $task_id)
+	{
+	    $task = Task::find($task_id);
+
+	    return view('tasks/edit', [
+	        'task' => $task,
+	    ]);
+	}
 
 
 
